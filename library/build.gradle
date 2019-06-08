@@ -61,8 +61,8 @@ android {
     defaultConfig {
         // NOTE: StandardMediaPlayer: API level 9+, OpenSLMediaPlayer: API level 14+
         //       (test app requires API level 10 because of MediaMetadataRetriever class)
-        minSdkVersion 9
-        targetSdkVersion 21
+        minSdkVersion 16
+        targetSdkVersion 28
 
         def dataProps = new Properties()
         dataProps.load(project.file(project.mavenPublishDataFile).newDataInputStream())
@@ -75,7 +75,7 @@ android {
                 ndkBuild {
                     // NOTE: need to specify targets to build successfully (build tools 2.2.0-alpha5)
                     // targets "OpenSLMediaPlayer", "OpenSLMediaPlayerJNI", "OpenSLMediaPlayerLibLoaderHelper"
-                    arguments "NDK_APPLICATION_MK:=src/main/jni/Application.mk", "APP_PLATFORM:=android-14"
+                    arguments "NDK_APPLICATION_MK:=src/main/jni/Application.mk", "APP_PLATFORM:=android-16"
                     abiFilters "arm64-v8a"
                 }
             }
@@ -116,7 +116,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 
 // NOTE: this line should be place at end of the file

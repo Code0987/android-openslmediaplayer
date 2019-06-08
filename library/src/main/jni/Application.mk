@@ -53,14 +53,14 @@ endif
 # APP_STL
 # (IMPL=[gnustl | c++ | stlport], LIBTYPE=[static | shared])
 #
-APP_STL_IMPL := stlport
+APP_STL_IMPL := c++
 APP_STL_LIBTYPE := static
 APP_STL := $(APP_STL_IMPL)_$(APP_STL_LIBTYPE)
 
 #
 # APP_PLATFORM
 #
-APP_PLATFORM := android-14
+APP_PLATFORM := android-16
 
 #
 # APP_OPTIM
@@ -71,21 +71,20 @@ APP_PLATFORM := android-14
 #
 # APP_ABI
 #
-APP_ABI := 
-APP_ABI += armeabi
+APP_ABI := arm64-v8a
 # use armeabi-v7a (deprecated in NDK version >= 12)
-ifneq (,$(filter $(OSLMP_NDK_RELEASE_VERSION_NUMBER), 9 10 11))
-APP_ABI += armeabi-v7a-hard
-else
-APP_ABI += armeabi-v7a
-endif
-APP_ABI += x86
-APP_ABI += mips
-ifneq ($(OSLMP_NDK_RELEASE_VERSION_NUMBER), 9)
-APP_ABI += arm64-v8a
-APP_ABI += x86_64
-APP_ABI += mips64
-endif
+#ifneq (,$(filter $(OSLMP_NDK_RELEASE_VERSION_NUMBER), 9 10 11))
+#APP_ABI += armeabi-v7a-hard
+#else
+#APP_ABI += armeabi-v7a
+#endif
+#APP_ABI += x86
+#APP_ABI += mips
+#ifneq ($(OSLMP_NDK_RELEASE_VERSION_NUMBER), 9)
+#APP_ABI += arm64-v8a
+#APP_ABI += x86_64
+#APP_ABI += mips64
+#endif
 
 #
 # APP_CFLAGS

@@ -29,8 +29,8 @@ android {
 
         // NOTE: StandardMediaPlayer: API level 9+, OpenSLMediaPlayer: API level 14+
         //       (test app requires API level 10 because of MediaMetadataRetriever class)
-        minSdkVersion 10
-        targetSdkVersion 21
+        minSdkVersion 16
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
@@ -49,9 +49,9 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile project(path: ':library')
+    implementation project(path: ':library')
 
     // WTF!  This does not work on New Build System 0.14.4 (2014/11/19)
     // releaseCompile project(path: ':library', configuration: 'release')

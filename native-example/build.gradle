@@ -49,8 +49,8 @@ android {
 
     defaultConfig {
         applicationId "com.h6ah4i.android.example.nativeopenslmediaplayer"
-        minSdkVersion 14
-        targetSdkVersion 21
+        minSdkVersion 16
+        targetSdkVersion 28
         versionCode 8
         versionName "0.7.5"
 
@@ -107,5 +107,5 @@ if (loadSigningConfigFromPropertiesFile(
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
